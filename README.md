@@ -16,19 +16,20 @@ IRC bot engine build for `#smf.sh` and related channels, quite similar to [cinch
 `config.yaml`:
 
     ---
-    server: irc.freenode.net
-    port: 6667
-    nick: user
-    delay_joins: :identified
-    channels:
-      - "#my-test-channel"
+    connection:
+      :server: irc.freenode.net
+      :port: 6667
+      :nick: user
+      :delay_joins: :identified
+      :channels:
+        - "#my-test-channel"
     plugins:
       "Cinch::Plugins::Identify":
         type: :nickserv
         username: "user"
         password: "password"
-      "Cinch::Plugins::YamlMemo": nil
-      "Cinch::Plugins::UrlScraper": nil
+      "Cinch::Plugins::YamlMemo":
+      "Cinch::Plugins::UrlScraper":
 
 and run:
 
