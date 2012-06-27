@@ -19,6 +19,7 @@ IRC bot engine build for `#smf.sh` and related channels, quite similar to [cinch
     server: irc.freenode.net
     port: 6667
     nick: user
+    delay_joins: :identified
     channels:
       - "#my-test-channel"
     plugins:

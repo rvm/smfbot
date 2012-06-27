@@ -16,6 +16,7 @@ class SmfBot
         c.channels = settings['channels']
         c.nick     = settings['nick']
         c.username = settings['nick']
+        c.delay_joins     = settings['delay_joins'] || 0
         c.plugins.plugins = []
       end
     end
@@ -23,15 +24,16 @@ class SmfBot
   end
 
   def add_plugin(plugin, options = nil)
-    @bot.info "loading plugin: #{plugin}."
+    @bot.info "loading plugin: #{plugin} with options: #{options}."
     @bot.configure do |c|
       require plugin.downcase.gsub('::','/')
       plugin = eval plugin
       c.plugins.plugins << plugin
       c.plugins.options[plugin] = options if options
     end
-  rescue
+  rescue Exception => e
     @bot.warn "failed loading plugin: #{plugin} ->\n#{}"
+    raise e
   end
 
   def start

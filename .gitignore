@@ -1,4 +1,4 @@
-*.gem
-*.yaml
-!example_config.yaml
-Gemfile.lock
+/Gemfile.lock
+/*.gem
+/*.yaml
+!/example_config.yaml
