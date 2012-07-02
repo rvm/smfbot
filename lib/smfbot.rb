@@ -31,6 +31,7 @@ class SmfBot
   end
 
   def start
+    Kernel.trap('INT') { @bot.quit("SMFBOT - Cinch #{Cinch::VERSION}") }
     @bot.start
   end
 end
