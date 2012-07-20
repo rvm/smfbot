@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'smfbot'
-  s.version     = '1.1.0'
+  s.version     = '1.1.1'
   s.summary     =
   s.description = 'IRC bot engine build for #smf.sh and related channels.'
   s.authors     = ['Michal Papis']
