@@ -27,7 +27,7 @@ IRC bot engine build for `#smf.sh` and related channels, quite similar to [cinch
       "Cinch::Plugins::Identify":
         :type: :nickserv
         :username: "user"
-        :password: "password"
+        :password: "password-file-to-read"
       "Cinch::Plugins::YamlMemo":
       "Cinch::Plugins::UrlScraper":
 
