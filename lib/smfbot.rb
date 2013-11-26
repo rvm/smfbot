@@ -23,7 +23,10 @@ class SmfBot
     @bot.configure do |c|
       plugin = eval plugin
       c.plugins.plugins << plugin
-      c.plugins.options[plugin] = options if options
+      if options
+        options[:password] = File.readlines(options[:password]).first.strip if options[:password]
+        c.plugins.options[plugin] = options
+      end
     end
   rescue Exception => e
     @bot.warn "failed loading plugin: #{plugin} ->\n"
